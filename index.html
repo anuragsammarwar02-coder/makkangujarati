@@ -1,12 +1,666 @@
+<meta charset="UTF-8">
 
-<!DOCTYPE html>
-<html lang="gu">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gujrati વેપારી (સેબી નોંધણી) – Official Telegram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<!-- Meta Pixel Code -->
+  <title>Gujarati Trader – Official Telegram</title>
+
+  <style>
+
+    /* =========================
+       GLOBAL RESET
+    ========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* =========================
+       HTML + BODY
+    ========================== */
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      background: #0b1220;
+      color: #ffffff;
+
+      margin: 0;
+
+      /*
+        IMPORTANT:
+
+        body ko flex nahi banaya gaya hai.
+
+        Meta Event Setup Tool apne elements
+        page mein inject karta hai. Agar body
+        flex container hota hai to injected
+        elements layout ko disturb kar sakte hain.
+      */
+    }
+
+
+    /* =========================
+       PAGE WRAPPER
+    ========================== */
+
+    .page-wrapper {
+
+      width: 100%;
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 16px;
+    }
+
+
+    /* =========================
+       MAIN CARD
+    ========================== */
+
+    .card {
+
+      width: 100%;
+      max-width: 420px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #0f1a2e 0%,
+          #0b1220 100%
+        );
+
+      border-radius: 28px;
+
+      padding: 36px 28px 32px;
+
+      text-align: center;
+
+      box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.45);
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+    }
+
+
+    /* =========================
+       LOGO
+    ========================== */
+
+    .logo-wrap {
+
+      width: 96px;
+      height: 96px;
+
+      margin:
+        0 auto 22px;
+
+      border-radius: 50%;
+
+      background: #ffffff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 8px 24px
+        rgba(0, 0, 0, 0.35);
+    }
+
+
+    .logo-wrap img {
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+
+    /* =========================
+       HEADING
+    ========================== */
+
+    h1 {
+
+      font-size: 28px;
+      font-weight: 800;
+
+      color: #f5c518;
+
+      letter-spacing: 0.5px;
+
+      margin-bottom: 6px;
+
+      text-transform: uppercase;
+    }
+
+
+    .sub {
+
+      font-size: 14px;
+      font-weight: 600;
+
+      color: #e8eef7;
+
+      letter-spacing: 1.2px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .desc {
+
+      font-size: 13px;
+
+      color: #9aa8bc;
+
+      margin-bottom: 26px;
+    }
+
+
+    /* =========================
+       TELEGRAM BUTTON
+    ========================== */
+
+    .btn {
+
+      display: block;
+
+      width: 100%;
+
+      background: #22c55e;
+
+      color: #ffffff;
+
+      text-decoration: none;
+
+      font-size: 16px;
+      font-weight: 700;
+
+      padding: 16px 20px;
+
+      border-radius: 14px;
+
+      margin-bottom: 16px;
+
+      box-shadow:
+        0 8px 20px
+        rgba(34, 197, 94, 0.35);
+
+      transition:
+        transform 0.15s ease;
+
+      border: none;
+
+      cursor: pointer;
+
+      font-family: inherit;
+
+      text-align: center;
+    }
+
+
+    .btn:active {
+
+      transform: scale(0.98);
+    }
+
+
+    .btn .rocket {
+
+      margin-right: 6px;
+    }
+
+
+    /* =========================
+       TRUST BOX
+    ========================== */
+
+    .trust-box {
+
+      background:
+        rgba(15, 40, 55, 0.7);
+
+      border:
+        1px solid
+        rgba(34, 197, 94, 0.25);
+
+      border-radius: 14px;
+
+      padding: 14px 16px;
+
+      margin-bottom: 22px;
+
+      text-align: left;
+    }
+
+
+    .trust-box p {
+
+      font-size: 14px;
+
+      color: #c8d6e5;
+
+      margin: 4px 0;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+    }
+
+
+    .trust-box .check {
+
+      color: #22c55e;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       FEATURES
+    ========================== */
+
+    .features {
+
+      text-align: left;
+
+      margin-bottom: 24px;
+    }
+
+
+    .features li {
+
+      list-style: none;
+
+      font-size: 14.5px;
+
+      color: #d1dce8;
+
+      margin: 10px 0;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+    }
+
+
+    .features .tick {
+
+      color: #22c55e;
+
+      font-weight: 700;
+
+      font-size: 15px;
+    }
+
+
+    /* =========================
+       TIMER BOX
+    ========================== */
+
+    .timer-box {
+
+      background:
+        rgba(245, 197, 24, 0.08);
+
+      border:
+        1px solid
+        rgba(245, 197, 24, 0.25);
+
+      border-radius: 12px;
+
+      padding: 12px 16px;
+
+      margin-bottom: 18px;
+    }
+
+
+    .timer-label {
+
+      font-size: 13px;
+
+      color: #f5c518;
+
+      font-weight: 600;
+
+      margin-bottom: 4px;
+    }
+
+
+    .timer {
+
+      font-size: 28px;
+
+      font-weight: 800;
+
+      color: #f5c518;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    .footer-notes {
+
+      margin-top: 8px;
+
+      font-size: 12.5px;
+
+      color: #8b9bb0;
+
+      line-height: 1.6;
+    }
+
+
+    .footer-notes .item {
+
+      margin: 6px 0;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 6px;
+    }
+
+
+    .footer-notes .highlight {
+
+      color: #f5c518;
+
+      font-weight: 600;
+    }
+
+
+    .agency {
+
+      margin-top: 20px;
+
+      font-size: 11px;
+
+      color: #6b7a8f;
+
+      letter-spacing: 0.3px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 380px) {
+
+      .page-wrapper {
+
+        padding: 12px;
+      }
+
+
+      .card {
+
+        padding:
+          28px
+          20px
+          26px;
+      }
+
+
+      h1 {
+
+        font-size: 24px;
+      }
+
+    }
+
+  </style>
+
+
+
+
+
+
+
+  <!--
+    IMPORTANT:
+
+    Flex layout yahan wrapper par hai,
+    BODY par nahi.
+
+    Isse Meta Event Setup Tool ke
+    injected elements page layout ko
+    disturb karne ke chances kam ho jaate hain.
+  -->
+
+  <div class="page-wrapper">
+
+
+    <div class="card">
+
+
+      <!-- LOGO -->
+
+      <div class="logo-wrap">
+
+        <img src="https://growwvix.pro/wp-content/uploads/2026/09/gujarati-logoo.jpg" alt="Gujarati Trader Logo">
+
+      </div>
+
+
+      <!-- TITLE -->
+
+      <h1>Gujarati Trader</h1>
+
+
+      <div class="sub">
+
+        NIFTY • BANKNIFTY • OPTIONS
+
+      </div>
+
+
+      <div class="desc">
+
+        Daily Intraday Trading Signals &amp; Analysis
+
+      </div>
+
+
+      <!-- FIRST TELEGRAM BUTTON -->
+
+      <a class="btn" id="join-telegram-btn-1" href="https://t.me/+b44uW46lqVUzNjg1">
+
+        🚀 Join Free Telegram Channel
+
+      </a>
+
+
+      <!-- TRUST BOX -->
+
+      <div class="trust-box">
+
+        <p>
+
+          <span class="check">✓</span>
+
+          Trusted by 5,000+ Traders
+
+        </p>
+
+
+        <p>
+
+          <span class="check">✓</span>
+
+          Daily Consistent Setups
+
+        </p>
+
+      </div>
+
+
+      <!-- FEATURES -->
+
+      <ul class="features">
+
+
+        <li>
+
+          <span class="tick">✓</span>
+
+          5–7 High Probability Trades
+
+        </li>
+
+
+        <li>
+
+          <span class="tick">✓</span>
+
+          Exact Entry, SL &amp; Target
+
+        </li>
+
+
+        <li>
+
+          <span class="tick">✓</span>
+
+          Beginner Friendly Guidance
+
+        </li>
+
+
+        <li>
+
+          <span class="tick">✓</span>
+
+          Live Market Updates
+
+        </li>
+
+
+      </ul>
+
+
+      <!-- SECOND TELEGRAM BUTTON -->
+
+      <a class="btn" id="join-telegram-btn-2" href="https://t.me/+b44uW46lqVUzNjg1">
+
+        🚀 Join Free Telegram Channel
+
+      </a>
+
+
+      <!-- TIMER -->
+
+      <div class="timer-box">
+
+        <div class="timer-label">
+
+          Redirecting in
+
+        </div>
+
+
+        <div class="timer" id="countdown">
+
+          10
+
+        </div>
+
+      </div>
+
+
+      <!-- FOOTER -->
+
+      <div class="footer-notes">
+
+
+        <div class="item">
+
+          ⏳
+
+          <span class="highlight">
+
+            Free Access Closing Soon
+
+          </span>
+
+        </div>
+
+
+        <div class="item">
+
+          📈 Limited Seats • Active Community
+
+        </div>
+
+
+        <div class="item">
+
+          ⚠️ Market investments are subject to risk
+
+        </div>
+
+
+      </div>
+
+
+      <div class="agency">
+
+        Ads managed by AK GrowthX Agency
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =========================
+       META PIXEL CODE
+  ========================== -->
+
+  <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,651 +673,68 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1427332216001225');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1427332216001225&ev=PageView&noscript=1"
-/></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1427332216001225&amp;ev=PageView&amp;noscript=1"></noscript>
 <!-- End Meta Pixel Code -->
-  
-  <meta name="description" content="Stay connected with the official Gujrati વેપારી community and access important updates through Telegram." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --primary-light: #3b82f6;
-      --bg: #f0f7ff;
-      --card: #ffffff;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --success: #22c55e;
-      --radius: 20px;
-      --shadow: 0 10px 40px -10px rgba(37, 99, 235, 0.15);
-    }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: linear-gradient(180deg, #eef6ff 0%, #f8fbff 40%, #ffffff 100%);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.5;
-      overflow-x: hidden;
-    }
 
-    /* Decorative blobs */
-    .blob {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.4;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .blob-1 {
-      width: 400px;
-      height: 400px;
-      background: #93c5fd;
-      top: -120px;
-      right: -100px;
-    }
-    .blob-2 {
-      width: 300px;
-      height: 300px;
-      background: #bfdbfe;
-      bottom: 10%;
-      left: -80px;
-    }
-
-    .page {
-      position: relative;
-      z-index: 1;
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 20px 16px 40px;
-    }
-
-    /* Header */
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 28px;
-      padding: 0 4px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-icon {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 800;
-      font-size: 15px;
-      letter-spacing: -0.5px;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
-    }
-
-    .brand-name {
-      font-weight: 700;
-      font-size: 16px;
-      color: var(--text);
-    }
-
-    .badge {
-      background: #eff6ff;
-      color: var(--primary);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.6px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid #bfdbfe;
-      text-transform: uppercase;
-    }
-
-    /* Main Card */
-    .main-card {
-      background: var(--card);
-      border-radius: 28px;
-      padding: 32px 24px 28px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(226, 232, 240, 0.8);
-      text-align: center;
-      margin-bottom: 28px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .main-card::before {
-      content: '';
-      position: absolute;
-      top: -60px;
-      right: -60px;
-      width: 160px;
-      height: 160px;
-      background: radial-gradient(circle, rgba(147, 197, 253, 0.35) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .logo-wrap {
-      width: 96px;
-      height: 96px;
-      margin: 0 auto 20px;
-      border-radius: 22px;
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-    }
-
-    .logo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .eyebrow {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      color: var(--primary);
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .title {
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 8px;
-      letter-spacing: -0.4px;
-      line-height: 1.25;
-    }
-
-    .title .guj {
-      font-size: 22px;
-      display: block;
-      margin-top: 2px;
-    }
-
-    .subtitle {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 22px;
-      max-width: 320px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Timer */
-    .timer-box {
-      background: linear-gradient(135deg, #eff6ff, #dbeafe);
-      border: 1px solid #bfdbfe;
-      border-radius: 16px;
-      padding: 14px 18px;
-      margin-bottom: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .timer-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--primary-dark);
-    }
-
-    .timer-count {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--primary);
-      font-variant-numeric: tabular-nums;
-      min-width: 36px;
-      text-align: center;
-    }
-
-    .timer-unit {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 16px 24px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      color: white;
-      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
-    }
-
-    .btn-primary:active {
-      transform: translateY(0);
-    }
-
-    .btn-icon {
-      font-size: 18px;
-    }
-
-    .trust-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px 18px;
-      margin-top: 18px;
-      font-size: 12px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .trust-item svg {
-      width: 14px;
-      height: 14px;
-      color: var(--success);
-      flex-shrink: 0;
-    }
-
-    /* Section title */
-    .section-title {
-      text-align: center;
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 18px;
-      letter-spacing: -0.3px;
-    }
-
-    /* Features */
-    .features {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    @media (min-width: 420px) {
-      .features {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .feature-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px 14px;
-      text-align: center;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
-      transition: transform 0.2s ease;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-3px);
-    }
-
-    .feature-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 12px;
-      font-size: 20px;
-    }
-
-    .feature-icon.updates { background: #fef2f2; }
-    .feature-icon.quick { background: #fefce8; }
-    .feature-icon.official { background: #f0fdf4; }
-
-    .feature-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-
-    .feature-desc {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.45;
-    }
-
-    /* CTA Banner */
-    .cta-banner {
-      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-      border-radius: 22px;
-      padding: 28px 22px;
-      text-align: center;
-      color: white;
-      margin-bottom: 24px;
-      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      left: -40px;
-      width: 120px;
-      height: 120px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 50%;
-    }
-
-    .cta-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      opacity: 0.85;
-      margin-bottom: 8px;
-    }
-
-    .cta-title {
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      letter-spacing: -0.3px;
-    }
-
-    .cta-desc {
-      font-size: 14px;
-      opacity: 0.9;
-      margin-bottom: 20px;
-      max-width: 280px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn-white {
-      background: white;
-      color: var(--primary-dark);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    .btn-white:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    /* Partner card */
-    .partner-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 22px 20px;
-      text-align: center;
-      margin-bottom: 28px;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
-    }
-
-    .partner-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      color: var(--primary);
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .partner-label span {
-      width: 6px;
-      height: 6px;
-      background: var(--primary);
-      border-radius: 50%;
-    }
-
-    .partner-title {
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-
-    .partner-desc {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      max-width: 300px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .tag {
-      background: #f1f5f9;
-      color: #475569;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid #e2e8f0;
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      color: var(--text-muted);
-      padding-top: 8px;
-    }
-
-    /* Progress bar under timer */
-    .progress- {
-      height: 4px;
-      background: #dbeafe;
-      border-radius: 999px;
-      margin-top: 10px;
-      overflow: hidden;
-    }
-
-    .progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #2563eb, #3b82f6);
-      border-radius: 999px;
-      width: 100%;
-      transition: width 1s linear;
-    }
-  </style>
-</head>
-<body>
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-
-  <div class="page">
-    <!-- Header -->
-    <header class="header">
-      <div class="brand">
-        <div class="brand-icon">GV</div>
-        <span class="brand-name">Gujrati વેપારી</span>
-      </div>
-      <span class="badge">Official</span>
-    </header>
-
-    <!-- Main Card -->
-    <section class="main-card">
-      <div class="logo-wrap">
-        <img src="https://growwvix.pro/wp-content/uploads/2026/09/gujarati-logoo.jpg" alt="Gujrati વેપારી Logo" />
-      </div>
-
-      <p class="eyebrow">Official Telegram Community</p>
-      <h1 class="title">
-        Gujrati વેપારી
-        <span class="guj">(સેબી નોંધણી)</span>
-      </h1>
-      <p class="subtitle">
-        Stay connected with the official Gujrati વેપારી community and access important updates through Telegram.
-      </p>
-
-      <!-- Countdown Timer -->
-      <div class="timer-box">
-        <span class="timer-label">Auto redirect in</span>
-        <span class="timer-count" id="countdown">10</span>
-        <span class="timer-unit">sec</span>
-      </div>
-      <div class="progress-">
-        <div class="progress-bar" id="progressBar"></div>
-      </div>
-
-      <a href="https://t.me/+b44uW46lqVUzNjg1" class="btn btn-primary" id="joinBtn" style="margin-top: 20px;">
-        <span class="btn-icon">✈️</span>
-        Join Official Telegram
-      </a>
-
-      <div class="trust-row">
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-          Official access
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-          Direct Telegram link
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-          Simple &amp; fast
-        </div>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <h2 class="section-title">Everything in one community.</h2>
-    <div class="features">
-      <div class="feature-card">
-        <div class="feature-icon updates">📢</div>
-        <h3 class="feature-title">Updates</h3>
-        <p class="feature-desc">Stay connected with announcements and information shared in the community.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon quick">⚡</div>
-        <h3 class="feature-title">Quick Access</h3>
-        <p class="feature-desc">Reach the official Telegram destination directly in a single tap.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon official">🛡️</div>
-        <h3 class="feature-title">Official</h3>
-        <p class="feature-desc">A focused landing page created for direct community access.</p>
-      </div>
-    </div>
-
-    <!-- CTA Banner -->
-    <section class="cta-banner">
-      <p class="cta-label">Ready to join?</p>
-      <h2 class="cta-title">Connect with Gujrati વેપારી</h2>
-      <p class="cta-desc">Continue to the official Telegram community using the button below.</p>
-      <a href="https://t.me/+b44uW46lqVUzNjg1" class="btn btn-white">
-        → Continue to Telegram
-      </a>
-    </section>
-
-    <!-- Partner -->
-    <section class="partner-card">
-      <div class="partner-label"><span></span> Ads &amp; Growth Partner</div>
-      <h3 class="partner-title">Ads Managed by AK GrowthX Agency</h3>
-      <p class="partner-desc">
-        This landing experience is supported with a focus on professional campaign presentation, ad growth and a clean user journey.
-      </p>
-      <div class="tags">
-        <span class="tag">Campaign Support</span>
-        <span class="tag">Growth Strategy</span>
-        <span class="tag">Professional Presence</span>
-      </div>
-    </section>
-
-    <footer class="footer">
-      © Gujrati વેપારી • Official community landing page
-    </footer>
-  </div>
+  <!-- =========================
+       COUNTDOWN REDIRECT
+  ========================== -->
 
   <script>
+
     (function () {
-      const TELEGRAM_URL = "https://t.me/+b44uW46lqVUzNjg1";
-      const TOTAL_SECONDS = 10;
-      let remaining = TOTAL_SECONDS;
 
-      const countdownEl = document.getElementById("countdown");
-      const progressBar = document.getElementById("progressBar");
+      var seconds = 10;
 
-      function updateUI() {
-        countdownEl.textContent = remaining;
-        const percent = (remaining / TOTAL_SECONDS) * 100;
-        progressBar.style.width = percent + "%";
-      }
+      var el =
+        document.getElementById(
+          "countdown"
+        );
 
-      function redirect() {
-        window.location.href = TELEGRAM_URL;
-      }
 
-      updateUI();
+      var link =
+        "https://t.me/+b44uW46lqVUzNjg1";
 
-      const timer = setInterval(function () {
-        remaining -= 1;
-        updateUI();
 
-        if (remaining <= 0) {
-          clearInterval(timer);
-          redirect();
-        }
-      }, 1000);
+      var timer =
+        setInterval(
+          function () {
+
+
+            seconds--;
+
+
+            if (
+              seconds <= 0
+            ) {
+
+              clearInterval(timer);
+
+
+              el.textContent =
+                "0";
+
+
+              window.location.href =
+                link;
+
+            }
+
+            else {
+
+              el.textContent =
+                seconds;
+
+            }
+
+
+          },
+          1000
+        );
+
+
     })();
+
   </script>
-</body>
-</html>
